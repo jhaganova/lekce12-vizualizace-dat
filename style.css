@@ -1,0 +1,13 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+	box-sizing: inherit;
+}
+
+body {
+	font: 18px/1.5 sans-serif;
+}
