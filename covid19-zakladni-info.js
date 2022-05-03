@@ -39,6 +39,20 @@ fetch('./variables.json')
             // proved validaci, zda plati podminka 
             // celkem_potvrzeni = aktivni + vyleceni + umrti
             // vysledek validace vypis do konzole pomoci console.log()
+            platnostUdaju();
+            function platnostUdaju() {
+                let potvrzenePripadyCelkem = parseInt(zakladniInfo.potvrzene_pripady_celkem);
+                let aktivniPripady = parseInt(zakladniInfo.aktivni_pripady);
+                let vyleceniCelkem = parseInt(zakladniInfo.vyleceni);
+                let umrtiCelkem = parseInt(zakladniInfo.umrti);
+
+                if (potvrzenePripadyCelkem == (aktivniPripady + vyleceniCelkem + umrtiCelkem)) {
+                    console.log('Celkový počet případů odpovídá aktuálně nakaženým + vyléčeným + mrtvým případům.');
+                } else {
+                    console.log('Celkový počet případů NEODPOVÍDÁ aktuálně nakaženým + vyléčeným + mrtvým případům.');
+                }
+            }
+
 
             // BONUSOVY UKOL NA CVICENI
             // proved refactoring lokalizace datumu a cislnych hodnot
