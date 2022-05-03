@@ -21,3 +21,6 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+
+# files with secrets and environment-specific values
+variables.json
