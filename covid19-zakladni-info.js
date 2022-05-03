@@ -24,6 +24,20 @@ fetch('./variables.json')
             document.getElementById('js-ockovani').innerText = parseInt(zakladniInfo.ockovane_osoby_vcerejsi_den).toLocaleString('cs-CZ')
             let datumOckovanych = new Date(zakladniInfo.ockovane_osoby_vcerejsi_den_datum);
             document.getElementById('js-ockovani-datum').innerText = datumOckovanych.toLocaleDateString('cs-CZ');
+        
+            // UKOL NA CVICENI
+            // pridej do prehledu podil pribytku nakazenych ve vekove 
+            // skupine 65+ za posledni mereny den z celkoveho pribytku
+            // nakazenych za posledni mereny den
+
+            // UKOL NA CVICENI
+            // proved validaci, zda plati podminka 
+            // celkem_potvrzeni = aktivni + vyleceni + umrti
+            // vysledek validace vypis do konzole pomoci console.log()
+
+            // BONUSOVY UKOL NA CVICENI
+            // proved refactoring lokalizace datumu a cislnych hodnot
+            // tak, ze vyvoris dve separatni funkce pro lokalizaci
         })
     })
     .catch(error => {
