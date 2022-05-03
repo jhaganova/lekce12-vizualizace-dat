@@ -26,3 +26,6 @@ fetch('./variables.json')
             document.getElementById('js-ockovani-datum').innerText = datumOckovanych.toLocaleDateString('cs-CZ');
         })
     })
+    .catch(error => {
+        console.error('Chyba aplikace (zakladni info): ', error);
+    })
