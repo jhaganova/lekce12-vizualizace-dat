@@ -16,7 +16,9 @@ fetch('./variables.json')
             document.getElementById('js-hospitalizovani').innerText = parseInt(zakladniInfo.aktualne_hospitalizovani).toLocaleString('cs-CZ');
 
             //pribytek za predchozi mereny den
-            document.getElementById('js-potvrzeni').innerText = parseInt(zakladniInfo.potvrzene_pripady_vcerejsi_den).toLocaleString('cs-CZ')
+            let noveNakazeni =  parseInt(zakladniInfo.potvrzene_pripady_vcerejsi_den);
+            document.getElementById('js-potvrzeni').innerText = noveNakazeni.toLocaleString('cs-CZ')
+            
             let datumPotvrzenych = new Date(zakladniInfo.potvrzene_pripady_vcerejsi_den_datum);
             document.getElementById('js-potvrzeni-datum').innerText = datumPotvrzenych.toLocaleDateString('cs-CZ');
 
@@ -29,7 +31,10 @@ fetch('./variables.json')
             // pridej do prehledu podil pribytku nakazenych ve vekove 
             // skupine 65+ za posledni mereny den z celkoveho pribytku
             // nakazenych za posledni mereny den
-
+            let noveNakazeniNad65 = parseInt(zakladniInfo.potvrzene_pripady_65_vcerejsi_den);
+            document.getElementById('js-potvrzeni-nad-65-let').innerText = noveNakazeniNad65;
+            document.getElementById('js-potvrzeni-nad-65-let-podil').innerText = Math.round((noveNakazeniNad65 / noveNakazeni) * 100);
+            
             // UKOL NA CVICENI
             // proved validaci, zda plati podminka 
             // celkem_potvrzeni = aktivni + vyleceni + umrti
